@@ -1,5 +1,6 @@
 import math
 
+
 class Node:  #Nodo di un Albero binario
     def __init__(self, key):
         self.key = key
