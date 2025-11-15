@@ -31,7 +31,7 @@ def postorder(node: Node):
 
 def main():
     print("=" * 45)
-    print("🌳  TREE TRASVERSAL DEMO (DFS)  🌳".center(45))
+    print("🌳  TREE VISIT DEMO (DFS)  🌳".center(45))
     print("=" * 45)
 
     # Costruzione dell’albero di esempio

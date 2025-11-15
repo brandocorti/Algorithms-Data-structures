@@ -1,60 +1,53 @@
+from typing import Optional
 import math
 
 
-class Node:  #Nodo di un Albero binario
-    def __init__(self, key):
-        self.key = key
-        self.left = None
-        self.right = None
+class Node:  # Nodo di un Albero binario
+    def __init__(self, key: int):
+        self.key: int = key
+        self.left: Optional["Node"] = None
+        self.right: Optional["Node"] = None
 
 
 class BinaryTree:
-    def __init__(self, root_key):
+    def __init__(self, root_key: int):
         self.root = Node(root_key)
 
-    def insertLeft(self, parent : Node, key):
-
+    def insertLeft(self, parent: Node, key: int):
         new_node = Node(key)
-        # if left node is empty, insert directly
         if parent.left is None:
-            parent.left = new_node # type: ignore
+            parent.left = new_node
         else:
-            #Se esiste gia un figlio sinistro, lo sposta sotto il nuodo nodo
             new_node.left = parent.left
-            parent.left = new_node # type: ignore
+            parent.left = new_node
 
-    def insertRight(self, parent : Node, key):
+    def insertRight(self, parent: Node, key: int):
         new_node = Node(key)
-
         if parent.right is None:
-            parent.right = new_node #type: ignore
+            parent.right = new_node
         else:
             new_node.right = parent.right
-            parent.right = new_node #type: ignore
+            parent.right = new_node
 
-    
-    def DeleteLeft(self, parent : Node):
-
+    def DeleteLeft(self, parent: Node):
         if parent.left is not None:
             parent.left = None
         else:
             print("Nessun figlio sinistro da eliminare")
-    
 
-    def DeleteRight(self, parent : Node):
+    def DeleteRight(self, parent: Node):
         if parent.right is not None:
             parent.right = None
         else:
             print("Nessun figlio destro da eliminare")
 
-
-    def print_tree(self, node : Node, level : int = 0, side : str = "root"):
-
+    def print_tree(self, node: Optional[Node], level: int = 0, side: str = "root"):
         if node is not None:
             indent = "  " * level
             print(f"{indent}{side} -> {node.key}")
-            self.print_tree(node.left, level +1, "left") #type: ignore
-            self.print_tree(node.right, level+1, "right") #type: ignore
+            self.print_tree(node.left, level + 1, "left")
+            self.print_tree(node.right, level + 1, "right")
+
 
 
 def main():
