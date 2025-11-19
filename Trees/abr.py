@@ -141,6 +141,14 @@ def main():
 
     print("\n🌲 BST finale:")
     tree.print_tree(t)
+          
+    max_node = max_Node(t) #type: ignore
+    min_node = min_Node(t) #type: ignore
+
+    print(f"\nMassimo: {max_node.key}  -  Minimo: {min_node.key}")
+
+
+
 
 
 
